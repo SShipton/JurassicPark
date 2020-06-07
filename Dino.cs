@@ -1,4 +1,6 @@
-﻿namespace JurassicPark
+﻿using System;
+
+namespace JurassicPark
 {
     class Dino
     {
@@ -19,6 +21,10 @@
             return premadeDescription;
         }
 
+        public static implicit operator Dino(Dino v)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 }

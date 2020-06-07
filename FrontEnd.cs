@@ -68,7 +68,6 @@ namespace JurassicPark
                             var description = dino.Description();
                             Console.WriteLine(description);
                         }
-
                         break;
 
                     case "A":
@@ -79,7 +78,6 @@ namespace JurassicPark
                         var newEnclosureNumber = PromptForString("EnclosureNumber:  ");
 
                         OurDinoController.AddNewDino(dinoNameForNewDino, newAcquiredDate, newDietType, newWeight, newEnclosureNumber);
-
                         break;
 
                     case "R":
@@ -101,8 +99,17 @@ namespace JurassicPark
                                 OurDinoController.Remove(foundDino);
                             }
                         }
+                        break;
+
+                    case "S":
+
+                        var herbivores = Dinos(dinos = dinos.dietType == "Herbivore");
+                        var carnivores = Dinos(dinos = dinos.dietType == "Carnivore");
+                        Console.WriteLine($"Herbivores:  {herbivores}");
+                        Console.WriteLine($"Carnivores:  {carnivores}");
 
                         break;
+
 
                     case "T":
                         var nameOfDinoToTransfer = PromptForString("Which dino would you like to transfer?:  ");
@@ -121,7 +128,6 @@ namespace JurassicPark
 
                             OurDinoController.Transfer(dinoToTransfer, newDinoEnclosureNumber);
                         }
-
                         break;
 
                     case "Q":

@@ -8,6 +8,8 @@ namespace JurassicPark
     {
         private List<Dino> Dinos = new List<Dino>();
 
+        public object Log { get; private set; }
+
         public IEnumerable<Dino> AllDinos()
         {
             Log.Add("List of dinos");
@@ -36,7 +38,7 @@ namespace JurassicPark
             dinoToTransfer.EnclosureNumber = enclosureNumber;
         }
 
-        public void AddNewDino(string name, string acquiredDate, string dietType, int weight, int enclosureNumber)
+        public void AddNewDino(string name, DateTime acquiredDate, string dietType, int weight, int enclosureNumber)
         {
             Log.Add($"Someone added a dino named {name}");
 
@@ -50,6 +52,11 @@ namespace JurassicPark
             };
 
             Dinos.Add(newDino);
+        }
+        public void DateTime(Dino acquiredDate, DateTime AcquiredDate)
+        {
+            DateTime acquiredDate = new DateTime();
+            string acquiredDateAsString = acquiredDate.ToString();
         }
 
         public void PrintLog()
@@ -92,6 +99,11 @@ namespace JurassicPark
             Dinos.Add(blue);
             Dinos.Add(rexy);
             Dinos.Add(meatball);
+        }
+
+        internal void AddNewDino(string dinoNameForNewDino, string newAcquiredDate, string newDietType, string newWeight, string newEnclosureNumber)
+        {
+            throw new NotImplementedException();
         }
     }
 }
